@@ -53,6 +53,7 @@
     <Compile Include="Day1\Arrange.cs" />
     <Compile Include="Day1\When_calculate.cs" />
     <Compile Include="Day1\When_calculate_using_halfway_around.cs" />
+    <Compile Include="Day2\When_Calculate.cs" />
     <Compile Include="DependencyMocker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
