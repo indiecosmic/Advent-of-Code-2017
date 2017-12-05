@@ -5,18 +5,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdventOfCodeTests;
 
 namespace AdventOfCode.Tests.Day2
 {
     [TestFixture]
-    public class When_Calculate
+    public class When_Calculate : TestBase<ChecksumCalculator>
     {
-        protected ChecksumCalculator Subject => new ChecksumCalculator();
+        public static List<TestCaseData> TestCases
+        {
+            get
+            {
+                var testCases = new List<TestCaseData>();
+                var input = @"5 1 9 5
+                7 5 3
+                2 4 6 8";
+                testCases.Add(new TestCaseData(input).Returns(18));
 
-        [TestCase(@"5 1 9 5
-                    7 5 3
-                    2 4 6 8", 18)]
-        [TestCase(@"1236	741	557	1029	144	101	1968	2159	1399	80	1139	1167	1695	82	90	2236
+                var input2 = @"1236	741	557	1029	144	101	1968	2159	1399	80	1139	1167	1695	82	90	2236
                     2134	106	107	1025	584	619	191	496	80	352	351	2267	1983	1973	97	1244
                     3227	179	691	3177	172	1636	3781	2020	3339	2337	189	3516	1500	176	159	3279
                     201	688	364	180	586	659	623	577	188	265	403	670	195	720	115	37
@@ -31,11 +37,18 @@ namespace AdventOfCode.Tests.Day2
                     1117	97	2758	2484	941	1854	1074	264	2494	83	1434	96	2067	2825	2160	92
                     2610	1290	204	2265	1374	2581	185	852	207	175	3308	1500	2898	1120	1892	3074
                     2322	1434	301	2156	98	2194	587	1416	1521	94	1985	424	91	119	1869	1073
-                    66	87	176	107	2791	109	21	92	3016	2239	1708	3175	3210	2842	446	484", 42299)]
-        public void Result_should_be_difference_between_largest_and_smallest_number(string input, int expectedResult)
+                    66	87	176	107	2791	109	21	92	3016	2239	1708	3175	3210	2842	446	484";
+                testCases.Add(new TestCaseData(input2).Returns(42299));
+
+                return testCases;
+            }
+        }
+
+        [TestCaseSource(nameof(TestCases))]
+        public int Result_should_be_difference_between_largest_and_smallest_number(string input)
         {
             var result = Subject.Calculate(input);
-            Assert.AreEqual(expectedResult, result);
+            return result;
         }
     }
 }
