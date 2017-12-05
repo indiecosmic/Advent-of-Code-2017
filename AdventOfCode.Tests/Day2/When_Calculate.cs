@@ -10,8 +10,10 @@ using AdventOfCodeTests;
 namespace AdventOfCode.Tests.Day2
 {
     [TestFixture]
-    public class When_Calculate : TestBase<ChecksumCalculator>
+    public class When_Calculate : Arrange
     {
+        protected override IRowValueCalculator RowValueCalculator => new MinMaxDiff();
+
         public static List<TestCaseData> TestCases
         {
             get

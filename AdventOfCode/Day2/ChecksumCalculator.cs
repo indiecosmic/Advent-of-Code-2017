@@ -6,13 +6,20 @@ namespace AdventOfCode.Day2
 {
     public class ChecksumCalculator
     {
+        private readonly IRowValueCalculator _rowValueCalculator;
+
+        public ChecksumCalculator(IRowValueCalculator rowValueCalculator)
+        {
+            _rowValueCalculator = rowValueCalculator;
+        }
+
         public int Calculate(string input)
         {
             var rows = ParseInputRows(input);
             var sum = 0;
             foreach (var row in rows)
             {
-                sum += (row.Max() - row.Min());
+                sum += _rowValueCalculator.Calculate(row);
             }
             return sum;
         }
