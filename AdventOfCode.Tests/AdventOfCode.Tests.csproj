@@ -60,6 +60,10 @@
     <Compile Include="Day3\When_CalculateSteps.cs" />
     <Compile Include="Day4\Arrange.cs" />
     <Compile Include="Day4\When_Validate.cs" />
+    <Compile Include="Day6\Arrange.cs" />
+    <Compile Include="Day6\When_FindBankWithMostBlocks.cs" />
+    <Compile Include="Day6\When_FindBankWithMostBlocks_and_two_values_are_same.cs" />
+    <Compile Include="Day6\When_Redistribute.cs" />
     <Compile Include="DependencyMocker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />

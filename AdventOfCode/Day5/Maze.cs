@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Text;
 
 namespace AdventOfCode.Day5
 {
@@ -39,17 +38,12 @@ namespace AdventOfCode.Day5
 
         public override string ToString()
         {
-            StringBuilder str = new StringBuilder();
+            var str = new StringBuilder();
             for (var i = 0; i < _state.Length; i++)
             {
-                if (i == _currentPosition)
-                {
-                    str.Append(("(" + _state[i] + ")").PadLeft(5, ' '));
-                }
-                else
-                {
-                    str.Append(_state[i].ToString().PadLeft(5, ' '));
-                }
+                str.Append(i == _currentPosition
+                    ? ("(" + _state[i] + ")").PadLeft(5, ' ')
+                    : _state[i].ToString().PadLeft(5, ' '));
             }
 
             return str.ToString();

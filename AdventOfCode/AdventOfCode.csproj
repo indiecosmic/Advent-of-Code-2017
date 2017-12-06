@@ -46,7 +46,9 @@
     <Compile Include="Day3\ManhattanDistance.cs" />
     <Compile Include="Day4\PassphraseValidator.cs" />
     <Compile Include="Day5\Maze.cs" />
+    <Compile Include="Day6\MemoryBank.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
