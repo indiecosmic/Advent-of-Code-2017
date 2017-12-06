@@ -43,6 +43,9 @@
     <Compile Include="Day1\InverseCaptcha.cs" />
     <Compile Include="Day2\ChecksumCalculator.cs" />
     <Compile Include="Day2\RowValueCalculators.cs" />
+    <Compile Include="Day3\ManhattanDistance.cs" />
+    <Compile Include="Day4\PassphraseValidator.cs" />
+    <Compile Include="Day5\Maze.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
