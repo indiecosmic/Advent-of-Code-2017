@@ -47,6 +47,8 @@
     <Compile Include="Day4\PassphraseValidator.cs" />
     <Compile Include="Day5\Maze.cs" />
     <Compile Include="Day6\MemoryBank.cs" />
+    <Compile Include="Day8\JumpInstruction.cs" />
+    <Compile Include="Day8\Register.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
