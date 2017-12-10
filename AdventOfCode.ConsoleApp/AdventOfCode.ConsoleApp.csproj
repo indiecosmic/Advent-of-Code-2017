@@ -58,5 +58,10 @@
       <Name>AdventOfCode</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="day8input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
