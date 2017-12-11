@@ -50,7 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Day11\Given_StepCalculator\When_Calculate.cs" />
+    <Compile Include="Day11\Given_CubeCoordinates\When_Calculate.cs" />
+    <Compile Include="Day11\Given_AxialCoordinates\When_Calculate.cs" />
+    <Compile Include="Day11\Given_CubeCoordinates\When_CalculateFurthestDistance.cs" />
     <Compile Include="Day1\Arrange.cs" />
     <Compile Include="Day1\When_calculate.cs" />
     <Compile Include="Day1\When_calculate_using_halfway_around.cs" />

@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Day11\StepCalculator.cs" />
+    <Compile Include="Day11\CubeCoordinates.cs" />
+    <Compile Include="Day11\AxialCoordinates.cs" />
     <Compile Include="Day1\InverseCaptcha.cs" />
     <Compile Include="Day2\ChecksumCalculator.cs" />
     <Compile Include="Day2\RowValueCalculators.cs" />

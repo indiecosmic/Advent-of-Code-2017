@@ -1,12 +1,13 @@
 ﻿using AdventOfCode.Day11;
-using AdventOfCodeTests;
 using NUnit.Framework;
 
-namespace AdventOfCode.Tests.Day11.Given_StepCalculator
+namespace AdventOfCode.Tests.Day11.Given_AxialCoordinates
 {
     [TestFixture]
-    public class When_Calculate : TestBase<StepCalculator>
+    public class When_Calculate
     {
+        private static AxialCoordinates Subject => new AxialCoordinates();
+
         [TestCase("ne, ne, ne", 3)]
         [TestCase("ne, ne, sw, sw", 0)]
         [TestCase("ne, ne, s, s", 2)]
