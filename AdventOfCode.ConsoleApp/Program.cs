@@ -13,7 +13,7 @@ namespace AdventOfCode.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Day8Solution.Run();
+            Day7Solution.Run();
             Console.ReadLine();
             //var manhattanDistance = new ManhattanDistance();
             //var spiral = manhattanDistance.GenerateSpiral(5);
