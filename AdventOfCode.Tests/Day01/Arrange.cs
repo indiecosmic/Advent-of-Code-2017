@@ -1,14 +1,13 @@
 ﻿using AdventOfCode.Day1;
-using AdventOfCodeTests;
 using NUnit.Framework;
 
-namespace AdventOfCode.Tests.Day1
+namespace AdventOfCode.Tests.Day01
 {
     [TestFixture]
     public abstract class Arrange
     {
         protected InverseCaptcha Subject { get; private set; }
-        protected virtual IDigitFinder DigitFinder { get; }
+        protected abstract IDigitFinder DigitFinder { get; }
 
         [SetUp]
         public void SetupBase()

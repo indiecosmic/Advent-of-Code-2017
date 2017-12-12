@@ -1,7 +1,7 @@
 ﻿using AdventOfCode.Day8;
 using NUnit.Framework;
 
-namespace AdventOfCode.Tests.Day8.Given_JumpInstruction
+namespace AdventOfCode.Tests.Day08.Given_JumpInstruction
 {
     public abstract class Arrange
     {

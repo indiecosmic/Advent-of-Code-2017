@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using AdventOfCode.Day2;
 using NUnit.Framework;
 
-namespace AdventOfCode.Tests.Day2
+namespace AdventOfCode.Tests.Day02
 {
     public class When_Calculate_part_2 : Arrange
     {

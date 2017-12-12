@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace AdventOfCode.Tests.Day4
+namespace AdventOfCode.Tests.Day04
 {
     [TestFixture]
     public class When_Validate : Arrange

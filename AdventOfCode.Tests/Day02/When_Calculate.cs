@@ -1,13 +1,8 @@
-﻿using AdventOfCode.Day2;
+﻿using System.Collections.Generic;
+using AdventOfCode.Day2;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AdventOfCodeTests;
 
-namespace AdventOfCode.Tests.Day2
+namespace AdventOfCode.Tests.Day02
 {
     [TestFixture]
     public class When_Calculate : Arrange

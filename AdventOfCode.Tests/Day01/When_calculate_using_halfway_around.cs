@@ -1,8 +1,9 @@
 ﻿using AdventOfCode.Day1;
 using NUnit.Framework;
 
-namespace AdventOfCode.Tests.Day1
+namespace AdventOfCode.Tests.Day01
 {
+    [TestFixture]
     public class When_calculate_using_halfway_around : Arrange
     {
         protected override IDigitFinder DigitFinder => new HalfwayAroundDigit();

@@ -1,7 +1,7 @@
 ﻿using AdventOfCode.Day4;
 using NUnit.Framework;
 
-namespace AdventOfCode.Tests.Day4
+namespace AdventOfCode.Tests.Day04
 {
     public abstract class Arrange
     {
