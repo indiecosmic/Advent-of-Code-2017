@@ -43,16 +43,15 @@
     <Compile Include="Day09\StreamProcessor.cs" />
     <Compile Include="Day11\CubeCoordinates.cs" />
     <Compile Include="Day11\AxialCoordinates.cs" />
-    <Compile Include="Day1\InverseCaptcha.cs" />
-    <Compile Include="Day2\ChecksumCalculator.cs" />
-    <Compile Include="Day2\RowValueCalculators.cs" />
-    <Compile Include="Day3\ManhattanDistance.cs" />
-    <Compile Include="Day4\PassphraseValidator.cs" />
-    <Compile Include="Day5\Maze.cs" />
-    <Compile Include="Day6\MemoryBank.cs" />
-    <Compile Include="Day7\Program.cs" />
-    <Compile Include="Day8\JumpInstruction.cs" />
-    <Compile Include="Day8\Register.cs" />
+    <Compile Include="Day01\InverseCaptcha.cs" />
+    <Compile Include="Day02\ChecksumCalculator.cs" />
+    <Compile Include="Day02\RowValueCalculators.cs" />
+    <Compile Include="Day03\ManhattanDistance.cs" />
+    <Compile Include="Day04\PassphraseValidator.cs" />
+    <Compile Include="Day05\Maze.cs" />
+    <Compile Include="Day06\MemoryBank.cs" />
+    <Compile Include="Day07\Program.cs" />
+    <Compile Include="Day08\JumpInstruction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

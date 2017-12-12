@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace AdventOfCode.Day8
+namespace AdventOfCode.Day08
 {
     public class JumpInstruction
     {

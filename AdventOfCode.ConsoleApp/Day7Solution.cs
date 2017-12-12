@@ -19,10 +19,10 @@ namespace AdventOfCode.ConsoleApp
             }
 
             var rows = input.Split(new[] {"\r", "\n"}, StringSplitOptions.RemoveEmptyEntries);
-            var programs = new Dictionary<string, Day7.Program>();
+            var programs = new Dictionary<string, Day07.Program>();
             foreach (var row in rows)
             {
-                var program = Day7.Program.Parse(row);
+                var program = Day07.Program.Parse(row);
                 programs.Add(program.Name, program);
             }
             foreach (var program in programs)

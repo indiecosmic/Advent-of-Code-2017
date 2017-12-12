@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AdventOfCode.Day8;
+using AdventOfCode.Day08;
 
 namespace AdventOfCode.ConsoleApp
 {

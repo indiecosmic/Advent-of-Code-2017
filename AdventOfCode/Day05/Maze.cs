@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace AdventOfCode.Day5
+namespace AdventOfCode.Day05
 {
     public class Maze
     {

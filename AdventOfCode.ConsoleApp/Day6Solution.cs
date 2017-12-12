@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AdventOfCode.Day6;
+using AdventOfCode.Day06;
 
 namespace AdventOfCode.ConsoleApp
 {

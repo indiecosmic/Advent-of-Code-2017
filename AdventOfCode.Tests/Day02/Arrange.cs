@@ -1,4 +1,4 @@
-﻿using AdventOfCode.Day2;
+﻿using AdventOfCode.Day02;
 using NUnit.Framework;
 
 namespace AdventOfCode.Tests.Day02

@@ -1,5 +1,5 @@
 ﻿using System;
-using AdventOfCode.Day4;
+using AdventOfCode.Day04;
 
 namespace AdventOfCode.ConsoleApp
 {

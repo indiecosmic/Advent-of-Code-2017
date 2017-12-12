@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AdventOfCode.Day1
+namespace AdventOfCode.Day01
 {
     public class InverseCaptcha
     {

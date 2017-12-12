@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace AdventOfCode.Day4
+namespace AdventOfCode.Day04
 {
     public class PassphraseValidator
     {

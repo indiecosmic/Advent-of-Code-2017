@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace AdventOfCode.Day2
+namespace AdventOfCode.Day02
 {
     public class ChecksumCalculator
     {

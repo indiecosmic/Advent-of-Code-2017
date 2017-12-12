@@ -1,4 +1,4 @@
-﻿using AdventOfCode.Day8;
+﻿using AdventOfCode.Day08;
 using NUnit.Framework;
 
 namespace AdventOfCode.Tests.Day08.Given_JumpInstruction
