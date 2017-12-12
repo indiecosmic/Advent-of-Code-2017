@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day09\Given_StreamProcessor\When_CountCharactersInsideGarbage.cs" />
+    <Compile Include="Day09\Given_StreamProcessor\When_FindGroups.cs" />
     <Compile Include="Day11\Given_CubeCoordinates\When_Calculate.cs" />
     <Compile Include="Day11\Given_AxialCoordinates\When_Calculate.cs" />
     <Compile Include="Day11\Given_CubeCoordinates\When_CalculateFurthestDistance.cs" />

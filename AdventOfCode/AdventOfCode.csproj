@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day09\StreamProcessor.cs" />
     <Compile Include="Day11\CubeCoordinates.cs" />
     <Compile Include="Day11\AxialCoordinates.cs" />
     <Compile Include="Day1\InverseCaptcha.cs" />
