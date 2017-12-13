@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AdventOfCode.Tests</RootNamespace>
     <AssemblyName>AdventOfCode.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day03\When_GenerateSpiral.cs" />
+    <Compile Include="Day03\When_GenerateSpiral_using_sum_of_adjacent_squares.cs" />
     <Compile Include="Day09\Given_StreamProcessor\When_CountCharactersInsideGarbage.cs" />
     <Compile Include="Day09\Given_StreamProcessor\When_FindGroups.cs" />
     <Compile Include="Day11\Given_CubeCoordinates\When_Calculate.cs" />
