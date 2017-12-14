@@ -19,5 +19,21 @@ namespace AdventOfCode.Day10
                 numbers[currentPos] = subArray[i];
             }
         }
+
+        public void Reverse(byte[] numbers, int position, int length)
+        {
+            var subArray = new byte[length];
+            for (var i = 0; i < length; i++)
+            {
+                var currentPos = position + i < numbers.Length ? position + i : position + i - numbers.Length;
+                subArray[i] = numbers[currentPos];
+            }
+            subArray = subArray.Reverse().ToArray();
+            for (var i = 0; i < length; i++)
+            {
+                var currentPos = position + i < numbers.Length ? position + i : position + i - numbers.Length;
+                numbers[currentPos] = subArray[i];
+            }
+        }
     }
 }
