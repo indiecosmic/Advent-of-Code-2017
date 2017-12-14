@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Day03\IMemoryWriter.cs" />
     <Compile Include="Day09\StreamProcessor.cs" />
+    <Compile Include="Day10\KnotHash.cs" />
+    <Compile Include="Day10\ListReverser.cs" />
     <Compile Include="Day11\CubeCoordinates.cs" />
     <Compile Include="Day11\AxialCoordinates.cs" />
     <Compile Include="Day01\InverseCaptcha.cs" />
