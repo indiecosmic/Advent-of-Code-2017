@@ -33,7 +33,7 @@ namespace AdventOfCode.Day03
             return spiral.Values.Max();
         }
 
-        public Dictionary<(int, int), int> GenerateSpiral(int size)
+        public Dictionary<(int, int), int> GenerateSpiral(int size, int? valueCutoff = null)
         {
             var dict = new Dictionary<(int, int), int>();
 
@@ -54,7 +54,7 @@ namespace AdventOfCode.Day03
                     x = (dir == 1) ? x + 1 : (dir == 3) ? x - 1 : x;
                     y = (dir == 2) ? y - 1 : (dir == 4) ? y + 1 : y;
                     var result = _memoryWriter.Write(dict, (x,y), mem );
-                    if (result >= size * size) return dict;
+                    if (mem == size * size || valueCutoff.HasValue && result > valueCutoff.Value) return dict;
                 }
                 dir = (dir == 4) ? 1 : dir + 1;
                 if ((dir == 1) || (dir == 3)) inc++;
