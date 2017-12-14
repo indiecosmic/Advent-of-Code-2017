@@ -55,7 +55,9 @@
     <Compile Include="Day03\When_GenerateSpiral_using_sum_of_adjacent_squares.cs" />
     <Compile Include="Day09\Given_StreamProcessor\When_CountCharactersInsideGarbage.cs" />
     <Compile Include="Day09\Given_StreamProcessor\When_FindGroups.cs" />
+    <Compile Include="Day10\Given_KnotHash\Arrange.cs" />
     <Compile Include="Day10\Given_KnotHash\When_Calculate.cs" />
+    <Compile Include="Day10\Given_KnotHash\When_Calculate_hex.cs" />
     <Compile Include="Day10\Given_ListReverser\When_Reverse.cs" />
     <Compile Include="Day11\Given_CubeCoordinates\When_Calculate.cs" />
     <Compile Include="Day11\Given_AxialCoordinates\When_Calculate.cs" />
