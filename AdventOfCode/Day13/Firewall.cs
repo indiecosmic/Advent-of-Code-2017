@@ -8,37 +8,29 @@ namespace AdventOfCode.Day13
     {
         private readonly int _maxDepth;
         private readonly Layer[] _layers;
-        private int _currentPosition;
 
         public int Severity { get; private set; }
         public bool WasCaught { get; private set; }
 
         private Firewall(Layer[] layers)
         {
-            _currentPosition = -1;
             _layers = layers;
             _maxDepth = layers.Max(l => l.Depth);
             Severity = 0;
             WasCaught = false;
         }
 
-        public void Run()
+        public void Run(int delay = 0)
         {
-            while (_currentPosition < _maxDepth)
-            {
-                _currentPosition++;
-
                 foreach (var layer in _layers)
                 {
-                    if (layer.CollisionCheck(_currentPosition))
+                    if (layer.CollisionCheck(delay))
                     {
                         WasCaught = true;
                         Severity += layer.Severity;
+                        return;
                     }
-
-                    layer.Update();
                 }
-            }
         }
 
         public static Firewall Create(string input)
@@ -53,40 +45,23 @@ namespace AdventOfCode.Day13
 
         public class Layer
         {
-            private const int ScannerDirectionUp = -1;
-            private const int ScannerDirectionDown = 1;
-
-            private int _scannerDirection;
-            private int _scannerPosition;
-
             public int Depth { get; }
             public int Range { get; }
+            public int RangeMultiple { get; set; }
 
-            public int ScannerPosition => _scannerPosition;
 
             public int Severity => Depth * Range;
 
-            public Layer(int depth, int range, int scannerPosition = 0, int scannerDirection = ScannerDirectionDown)
+            public Layer(int depth, int range)
             {
                 Depth = depth;
                 Range = range;
-                _scannerPosition = scannerPosition;
-                _scannerDirection = scannerDirection;
+                RangeMultiple = (Range - 1) * 2;
             }
 
-            public void Update()
+            public bool CollisionCheck(int t)
             {
-                if (_scannerPosition == Range - 1 && _scannerDirection == ScannerDirectionDown ||
-                    _scannerPosition == 0 && _scannerDirection == ScannerDirectionUp)
-                {
-                    _scannerDirection = -_scannerDirection;
-                }
-                _scannerPosition += _scannerDirection;
-            }
-
-            public bool CollisionCheck(int position)
-            {
-                return position == Depth && _scannerPosition == 0;
+                return (Depth + t) % RangeMultiple == 0;
             }
         }
     }

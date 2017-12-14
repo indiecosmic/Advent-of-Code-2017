@@ -22,7 +22,7 @@ namespace AdventOfCode.ConsoleApp
             while (true)
             {
                 var firewall = Firewall.Create(input);
-                firewall.Run();
+                firewall.Run(delay);
                 if (!firewall.WasCaught) break;
                 delay++;
             }

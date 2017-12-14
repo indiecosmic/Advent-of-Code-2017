@@ -74,9 +74,6 @@
     <Compile Include="Day06\When_Redistribute.cs" />
     <Compile Include="Day08\Given_JumpInstruction\Arrange.cs" />
     <Compile Include="Day08\Given_JumpInstruction\When_ParseInstruction.cs" />
-    <Compile Include="Day13\Given_Layer\Arrange.cs" />
-    <Compile Include="Day13\Given_Layer\When_Update.cs" />
-    <Compile Include="Day13\Given_Layer\When_Update_and_scanner_is_at_bottom.cs" />
     <Compile Include="DependencyMocker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
