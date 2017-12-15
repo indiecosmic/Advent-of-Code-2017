@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AdventOfCode.Day10;
+﻿using AdventOfCode.Day10;
 using NUnit.Framework;
-using NUnit.Framework.Internal;
 
 namespace AdventOfCode.Tests.Day10.Given_ListReverser
 {

@@ -79,6 +79,7 @@
     <Compile Include="Day08\Given_JumpInstruction\Arrange.cs" />
     <Compile Include="Day08\Given_JumpInstruction\When_ParseInstruction.cs" />
     <Compile Include="Day12\Given_PipeSystem\When_Find_programs_in_group.cs" />
+    <Compile Include="Day14\Given_DiskDefragmenter\When_CreateGrid.cs" />
     <Compile Include="DependencyMocker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
