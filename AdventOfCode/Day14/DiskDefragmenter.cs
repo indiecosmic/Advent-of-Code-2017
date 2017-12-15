@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using AdventOfCode.Day10;
@@ -11,13 +12,15 @@ namespace AdventOfCode.Day14
     public class DiskDefragmenter
     {
         private readonly KnotHash _knotHash;
+        private readonly RegionIdentifier _regionIdentifier;
 
         public DiskDefragmenter()
         {
             _knotHash = new KnotHash(new ListReverser());
+            _regionIdentifier = new RegionIdentifier();
         }
 
-        public IEnumerable<byte[]> CreateGrid(string input)
+        public byte[][] CreateGrid(string input)
         {
             var grid = new List<byte[]>();
             for (var i = 0; i < 128; i++)
@@ -27,13 +30,21 @@ namespace AdventOfCode.Day14
                 var gridRow = ConvertHexStringToBinaryArray(knotHash);
                 grid.Add(gridRow);
             }
-            return grid;
+            return grid.ToArray();
         }
 
         public int CalculateNumberOfUsedSquares(string input)
         {
             var grid = CreateGrid(input);
             return grid.Sum(row => row.Sum(square => square));
+        }
+
+        public int CalculateNumberOfRegions(string input)
+        {
+            var grid = CreateGrid(input);
+            var regions = _regionIdentifier.IdentifyRegions(grid);
+
+            return regions.Cast<int>().Max();
         }
 
         private byte[] ConvertHexStringToBinaryArray(string input)

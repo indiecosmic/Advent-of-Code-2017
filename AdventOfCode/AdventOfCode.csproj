@@ -59,6 +59,7 @@
     <Compile Include="Day12\PipeSystem.cs" />
     <Compile Include="Day13\Firewall.cs" />
     <Compile Include="Day14\DiskDefragmenter.cs" />
+    <Compile Include="Day14\RegionIdentifier.cs" />
     <Compile Include="Day15\Generator.cs" />
     <Compile Include="Day15\Judge.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

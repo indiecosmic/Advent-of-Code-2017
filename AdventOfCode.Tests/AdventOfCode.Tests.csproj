@@ -80,6 +80,7 @@
     <Compile Include="Day08\Given_JumpInstruction\When_ParseInstruction.cs" />
     <Compile Include="Day12\Given_PipeSystem\When_Find_programs_in_group.cs" />
     <Compile Include="Day14\Given_DiskDefragmenter\When_CreateGrid.cs" />
+    <Compile Include="Day14\Given_RegionIdentifier\When_IdentifyRegions.cs" />
     <Compile Include="Day15\Given_Generator\When_Generate.cs" />
     <Compile Include="Day15\Given_Judge\When_JudgePairs.cs" />
     <Compile Include="DependencyMocker.cs" />

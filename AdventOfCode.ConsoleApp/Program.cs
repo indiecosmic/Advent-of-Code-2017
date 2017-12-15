@@ -6,7 +6,7 @@ namespace AdventOfCode.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Day15Solution.Run();
+            Day14Solution.Run();
             Console.ReadLine();
         }
     }
