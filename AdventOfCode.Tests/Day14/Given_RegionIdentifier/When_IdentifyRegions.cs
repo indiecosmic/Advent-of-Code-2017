@@ -1,5 +1,4 @@
 ﻿using AdventOfCode.Day14;
-using AdventOfCodeTests;
 using NUnit.Framework;
 
 namespace AdventOfCode.Tests.Day14.Given_RegionIdentifier

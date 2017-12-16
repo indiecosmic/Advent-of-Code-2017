@@ -12,7 +12,7 @@ namespace AdventOfCode.Day05
 
         public Maze(int[] initialState, IOffsetRule offsetRule)
         {
-            _state = initialState;
+            _state = (int[])initialState.Clone();
             _offsetRule = offsetRule;
             _currentPosition = 0;
         }

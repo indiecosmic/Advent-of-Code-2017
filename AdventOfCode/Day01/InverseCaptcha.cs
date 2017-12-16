@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace AdventOfCode.Day01
 {
@@ -13,49 +14,46 @@ namespace AdventOfCode.Day01
 
         public int Calculate(string input)
         {
+            var digits = input.Select(i => (int)char.GetNumericValue(i)).ToArray();
+
             var result = 0;
-            for (var i = 0; i < input.Length; i++)
+            for (var i = 0; i < digits.Length; i++)
             {
-                var currentDigit = Convert.ToInt32(input.Substring(i, 1));
-                var nextDigit = _digitFinder.FindNextDigit(input, i);
+                var currentDigit = digits[i];
+                var nextDigit = _digitFinder.FindNextDigit(digits, i);
                 if (currentDigit == nextDigit) result += currentDigit;
             }
 
             return result;
         }
-
-        public int Calculate(int input)
-        {
-            return Calculate(input.ToString());
-        }
     }
 
     public interface IDigitFinder
     {
-        int FindNextDigit(string input, int currentPosition);
+        int FindNextDigit(int[] digits, int currentPosition);
     }
 
     public class NextDigit : IDigitFinder
     {
-        public int FindNextDigit(string input, int currentPosition)
+        public int FindNextDigit(int[] digits, int currentPosition)
         {
-            var nextIndex = currentPosition == (input.Length - 1) ? 0 : currentPosition + 1;
-            return Convert.ToInt32(input.Substring(nextIndex, 1));
+            var nextIndex = currentPosition == (digits.Length - 1) ? 0 : currentPosition + 1;
+            return digits[nextIndex];
         }
     }
 
     public class HalfwayAroundDigit : IDigitFinder
     {
-        public int FindNextDigit(string input, int currentPosition)
+        public int FindNextDigit(int[] digits, int currentPosition)
         {
-            var steps = input.Length / 2;
-            var nextIndex = 0;
-            if (currentPosition + steps <= input.Length - 1)
+            var steps = digits.Length / 2;
+            int nextIndex;
+            if (currentPosition + steps <= digits.Length - 1)
                 nextIndex = currentPosition + steps;
             else
-                nextIndex = currentPosition + steps - (input.Length);
+                nextIndex = currentPosition + steps - (digits.Length);
 
-            return Convert.ToInt32(input.Substring(nextIndex, 1));
+            return digits[nextIndex];
         }
     }
 }

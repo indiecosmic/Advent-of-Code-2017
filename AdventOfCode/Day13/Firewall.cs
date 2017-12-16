@@ -6,7 +6,6 @@ namespace AdventOfCode.Day13
 {
     public class Firewall
     {
-        private readonly int _maxDepth;
         private readonly Layer[] _layers;
 
         public int Severity { get; private set; }
@@ -15,7 +14,6 @@ namespace AdventOfCode.Day13
         private Firewall(Layer[] layers)
         {
             _layers = layers;
-            _maxDepth = layers.Max(l => l.Depth);
             Severity = 0;
             WasCaught = false;
         }

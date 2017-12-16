@@ -1,10 +1,10 @@
-﻿using Moq;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using Moq;
 
-namespace AdventOfCodeTests
+namespace AdventOfCode.Tests
 {
     public class DependencyMocker : DependencyMockerBase
     {

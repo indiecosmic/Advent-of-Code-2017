@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace AdventOfCodeTests
+namespace AdventOfCode.Tests
 {
     public abstract class TestBase<T> where T : class
     {

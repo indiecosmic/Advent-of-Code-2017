@@ -10,9 +10,9 @@ namespace AdventOfCode.Day09
             Group root = null, currentGroup = null;
             var garbage = false;
             var cancel = false;
-            for (var i = 0; i < input.Length; i++)
+            foreach (var c in input)
             {
-                if (input[i] == '{' && !garbage && !cancel)
+                if (c == '{' && !garbage && !cancel)
                 {
                     if (currentGroup == null)
                     {
@@ -27,19 +27,19 @@ namespace AdventOfCode.Day09
                         currentGroup = newGroup;
                     }
                 }
-                else if (input[i] == '}' && !garbage && !cancel)
+                else if (c == '}' && !garbage && !cancel)
                 {
                     currentGroup = currentGroup?.Parent;
                 }
-                else if (input[i] == '<' && !garbage && !cancel)
+                else if (c == '<' && !garbage && !cancel)
                 {
                     garbage = true;
                 }
-                else if (input[i] == '>' && garbage && !cancel)
+                else if (c == '>' && garbage && !cancel)
                 {
                     garbage = false;
                 }
-                else if (input[i] == '!' && !cancel)
+                else if (c == '!' && !cancel)
                 {
                     cancel = true;
                 }
@@ -57,17 +57,17 @@ namespace AdventOfCode.Day09
             var garbage = false;
             var cancel = false;
             var count = 0;
-            for (var i = 0; i < input.Length; i++)
+            foreach (char c in input)
             {
-                if (input[i] == '<' && !garbage && !cancel)
+                if (c == '<' && !garbage && !cancel)
                 {
                     garbage = true;
                 }
-                else if (input[i] == '>' && garbage && !cancel)
+                else if (c == '>' && garbage && !cancel)
                 {
                     garbage = false;
                 }
-                else if (input[i] == '!' && !cancel)
+                else if (c == '!' && !cancel)
                 {
                     cancel = true;
                 }

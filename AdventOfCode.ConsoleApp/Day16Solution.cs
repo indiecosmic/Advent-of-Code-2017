@@ -5,7 +5,7 @@ using AdventOfCode.Day16;
 
 namespace AdventOfCode.ConsoleApp
 {
-    public class Day16Solution
+    public static class Day16Solution
     {
         public static void Run()
         {

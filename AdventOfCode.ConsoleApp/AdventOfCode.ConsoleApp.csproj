@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day01Solution.cs" />
     <Compile Include="Day03Solution.cs" />
     <Compile Include="Day09Solution.cs" />
     <Compile Include="Day10Solution.cs" />
@@ -53,7 +54,7 @@
     <Compile Include="Day15Solution.cs" />
     <Compile Include="Day16Solution.cs" />
     <Compile Include="Day4Solution.cs" />
-    <Compile Include="Day5Solution.cs" />
+    <Compile Include="Day05Solution.cs" />
     <Compile Include="Day6Solution.cs" />
     <Compile Include="Day7Solution.cs" />
     <Compile Include="Day8Solution.cs" />
@@ -70,6 +71,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="day01input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="day05input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="day09input.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
