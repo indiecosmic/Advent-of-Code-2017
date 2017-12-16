@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AdventOfCode.Day02
 {
@@ -23,26 +24,16 @@ namespace AdventOfCode.Day02
             return sum;
         }
 
-        private IList<int[]> ParseInputRows(string input)
+        private static IEnumerable<int[]> ParseInputRows(string input)
         {
-            var rows = input.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-            var result = new List<int[]>();
-            foreach (var row in rows)
-            {
-                result.Add(ParseRow(row));
-            }
-            return result;
+            var rows = input.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            return rows.Select(ParseRow).ToList();
         }
 
-        private int[] ParseRow(string row)
+        private static int[] ParseRow(string row)
         {
-            var numbers = row.Split(new[] { " ", "\t" }, StringSplitOptions.RemoveEmptyEntries);
-            var results = new List<int>();
-            foreach (var number in numbers)
-            {
-                results.Add(Convert.ToInt32(number));
-            }
-            return results.ToArray();
+            var numbers = row.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            return numbers.Select(number => Convert.ToInt32(number)).ToArray();
         }
     }
 }

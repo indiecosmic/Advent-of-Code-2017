@@ -1,25 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
-namespace AdventOfCode.ConsoleApp
+namespace AdventOfCode.ConsoleApp.Solutions
 {
-    public class Day7Solution
+    internal class Day07 : SolutionBase
     {
-        public static void Run()
+        public override void Run()
         {
-            string input;
-            using (var reader = new StreamReader("day7input.txt"))
-            {
-                input = reader.ReadToEnd();
-            }
+            Console.WriteLine("Day 7");
+            var input = GetInput();
 
             var rows = input.Split(new[] {"\r", "\n"}, StringSplitOptions.RemoveEmptyEntries);
-            var programs = new Dictionary<string, Day07.Program>();
+            var programs = new Dictionary<string, AdventOfCode.Day07.Program>();
             foreach (var row in rows)
             {
-                var program = Day07.Program.Parse(row);
+                var program = AdventOfCode.Day07.Program.Parse(row);
                 programs.Add(program.Name, program);
             }
             foreach (var program in programs)
@@ -35,7 +31,12 @@ namespace AdventOfCode.ConsoleApp
             }
 
             var root = programs.FirstOrDefault(p => p.Value.Parent == null).Value;
-            foreach (var child in root.Children)
+            Console.WriteLine($"Root name: {root.Name}");
+
+            var unBalancedChild = root.Children.GroupBy(c => c.GetWeight()).FirstOrDefault(c => c.Count() == 1).FirstOrDefault();
+
+
+            foreach (var child in unBalancedChild.Children)
             {
                 Console.WriteLine($"{child.Name} {child.Weight} {child.GetWeight()}");
             }

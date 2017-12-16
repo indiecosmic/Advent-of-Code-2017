@@ -10,7 +10,7 @@ namespace AdventOfCode.Tests.Day04
         [SetUp]
         public void SetupBase()
         {
-            Validator = new PassphraseValidator();
+            Validator = new PassphraseValidator(new IValidationRule[]{new NoDuplicateWords(), new NoAnagrams()});
         }
     }
 }

@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using AdventOfCode.Day06;
 
-namespace AdventOfCode.ConsoleApp
+namespace AdventOfCode.ConsoleApp.Solutions
 {
-    public class Day6Solution
+    internal class Day06 : SolutionBase
     {
-        public static void Run()
+        public override void Run()
         {
-            var initialState = new[] { 14,0,15,12,11,11,3,5,1,6,8,4,9,1,8,4 };
-            //var initialState = new[] { 0,2,7,0 };
+            Console.WriteLine("Day 6");
+            var initialState = new[] { 14, 0, 15, 12, 11, 11, 3, 5, 1, 6, 8, 4, 9, 1, 8, 4 };
+
             var history = new List<int[]>();
             var memoryBank = new MemoryBank(initialState);
             var seenBefore = false;
+            var count = 0;
             while (!seenBefore)
             {
                 var currentState = memoryBank.GetState();
@@ -21,14 +23,14 @@ namespace AdventOfCode.ConsoleApp
                 {
                     seenBefore = true;
                     var index = history.FindIndex(s => s.SequenceEqual(currentState));
-                    Console.WriteLine($"Found in index {index}");
+                    Console.WriteLine($"Number of cycles: {count - index}");
                 }
                 else
                 {
                     history.Add(currentState);
-                    
                 }
                 memoryBank.Redistribute();
+                count++;
             }
 
             Console.WriteLine($"Number of operations: {history.Count}");

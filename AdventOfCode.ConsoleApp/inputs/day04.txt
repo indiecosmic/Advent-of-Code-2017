@@ -1,13 +1,4 @@
-﻿using System;
-using AdventOfCode.Day04;
-
-namespace AdventOfCode.ConsoleApp
-{
-    public class Day4Solution
-    {
-        static void Run()
-        {
-            var input = @"una bokpr ftz ryw nau yknf fguaczl anu
+una bokpr ftz ryw nau yknf fguaczl anu
 tvay wvco bcoblpt fwzg sfsys zvuqll mcbhwz ovcw fgdy
 ynsocz vid rfmsy essqt fpbjvvq sldje qfpvjvb
 yvh nxc kla vhy vkbq cxfzgr
@@ -518,18 +509,4 @@ xjbyy mxfxa ogvk nqiy qyni ldqwryj niyq jjixc
 uhbul daccgva xtiz dim uhbul yjmakv yjmakv
 huo esajup ouj oju ujo
 eeeu hwvsk jfkmds okhi pogskfm itdlbll
-lpyubo dylpfb iehwug decj ntidy cuygyg lalkb iutu oxgm imn";
-
-            var lines = input.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-            var validator = new PassphraseValidator();
-            var count = 0;
-            foreach (var line in lines)
-            {
-                if (validator.IsValid(line)) count++;
-            }
-
-            Console.WriteLine(count);
-            Console.ReadLine();
-        }
-    }
-}
+lpyubo dylpfb iehwug decj ntidy cuygyg lalkb iutu oxgm imn

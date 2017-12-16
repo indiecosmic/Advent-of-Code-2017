@@ -3,19 +3,14 @@ using System.IO;
 using System.Linq;
 using AdventOfCode.Day05;
 
-namespace AdventOfCode.ConsoleApp
+namespace AdventOfCode.ConsoleApp.Solutions
 {
-    public static class Day05Solution
+    internal class Day05 : SolutionBase
     {
-        public static void Run()
+        public override void Run()
         {
             Console.WriteLine("Day 5");
-
-            string input;
-            using (var reader = new StreamReader("day05input.txt"))
-            {
-                input = reader.ReadToEnd();
-            }
+            var input = GetInput();
             var lines = input.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             var initialState = lines.Select(l => Convert.ToInt32(l)).ToArray();
 

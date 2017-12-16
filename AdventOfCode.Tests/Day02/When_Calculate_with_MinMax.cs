@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace AdventOfCode.Tests.Day02
 {
     [TestFixture]
-    public class When_Calculate : Arrange
+    public class When_Calculate_with_MinMax : Arrange
     {
         protected override IRowValueCalculator RowValueCalculator => new MinMaxDiff();
 
