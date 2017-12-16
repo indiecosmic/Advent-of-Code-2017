@@ -1,18 +1,14 @@
 ﻿using System;
-using System.IO;
 using AdventOfCode.Day09;
 
-namespace AdventOfCode.ConsoleApp
+namespace AdventOfCode.ConsoleApp.Solutions
 {
-    public static class Day09Solution
+    internal class Day09 : SolutionBase
     {
-        public static void Run()
+        public override void Run()
         {
-            string input;
-            using (var reader = new StreamReader("day09input.txt"))
-            {
-                input = reader.ReadToEnd().Trim();
-            }
+            Console.WriteLine("Day 9");
+            var input = GetInput();
 
             var processor = new StreamProcessor();
             var groups = processor.FindGroups(input);

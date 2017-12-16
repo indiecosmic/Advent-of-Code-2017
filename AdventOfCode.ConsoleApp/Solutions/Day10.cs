@@ -2,11 +2,11 @@
 using System.Linq;
 using AdventOfCode.Day10;
 
-namespace AdventOfCode.ConsoleApp
+namespace AdventOfCode.ConsoleApp.Solutions
 {
-    public class Day10Solution
+    internal class Day10
     {
-        public static void Run()
+        public void Run()
         {
             var numbers = new int[256];
             for (var i = 0; i < numbers.Length; i++)

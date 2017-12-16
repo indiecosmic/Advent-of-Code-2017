@@ -1,24 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using AdventOfCode.Day08;
 
-namespace AdventOfCode.ConsoleApp
+namespace AdventOfCode.ConsoleApp.Solutions
 {
-    public class Day8Solution
+    internal class Day08 : SolutionBase
     {
-        public static void Run()
+        public override void Run()
         {
-            //var input = @"b inc 5 if a > 1
-            //              a inc 1 if b < 5
-            //              c dec -10 if a >= 1
-            //              c inc -20 if c == 10";
-            string input;
-            using (var reader = new StreamReader("day8input.txt"))
-            {
-                input = reader.ReadToEnd();
-            }
+            Console.WriteLine("Day 8");
+
+            var input = GetInput();
 
             var instructions = ParseInstructions(input);
             var register = InitializeRegisters(instructions);
@@ -34,14 +27,14 @@ namespace AdventOfCode.ConsoleApp
             Console.WriteLine($"Max value: {maxValue} ({max})");
         }
 
-        public static IList<JumpInstruction> ParseInstructions(string input)
+        private static IList<JumpInstruction> ParseInstructions(string input)
         {
             var instructions = input.Split(new[] { "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
             instructions = instructions.Select(i => i.Trim()).ToArray();
             return instructions.Select(JumpInstruction.Parse).ToList();
         }
 
-        public static Dictionary<string, int> InitializeRegisters(IEnumerable<JumpInstruction> instructions)
+        private static Dictionary<string, int> InitializeRegisters(IEnumerable<JumpInstruction> instructions)
         {
             var result = new Dictionary<string, int>();
             foreach (var instruction in instructions)

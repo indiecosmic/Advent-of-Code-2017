@@ -18,7 +18,7 @@ namespace AdventOfCode.Day13
             WasCaught = false;
         }
 
-        public void Run(int delay = 0)
+        public void Run(int delay = 0, bool breakOnCaught = false)
         {
                 foreach (var layer in _layers)
                 {
@@ -26,7 +26,7 @@ namespace AdventOfCode.Day13
                     {
                         WasCaught = true;
                         Severity += layer.Severity;
-                        return;
+                        if (breakOnCaught) return;
                     }
                 }
         }

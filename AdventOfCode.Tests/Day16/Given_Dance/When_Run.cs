@@ -6,7 +6,7 @@ namespace AdventOfCode.Tests.Day16.Given_Dance
     [TestFixture]
     public class When_Run
     {
-        private readonly char[] _startPositions = new[] { 'a', 'b', 'c', 'd', 'e' };
+        private readonly char[] _startPositions = { 'a', 'b', 'c', 'd', 'e' };
         private readonly Dance _subject = Dance.Parse("s1,x3/4,pe/b");
         private char[] _result;
 

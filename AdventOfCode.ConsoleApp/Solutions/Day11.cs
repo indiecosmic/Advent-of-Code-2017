@@ -1,18 +1,15 @@
 ﻿using System;
-using System.IO;
 using AdventOfCode.Day11;
 
-namespace AdventOfCode.ConsoleApp
+namespace AdventOfCode.ConsoleApp.Solutions
 {
-    public static class Day11Solution
+    internal class Day11 : SolutionBase
     {
-        public static void Run()
+        public override void Run()
         {
-            string input;
-            using (var reader = new StreamReader("day11input.txt"))
-            {
-                input = reader.ReadToEnd();
-            }
+            Console.WriteLine("Day 11");
+            var input = GetInput();
+
             var calculator = new CubeCoordinates();
             var fewestNumberOfSteps = calculator.CalculateFewestNumberOfSteps(input);
             Console.WriteLine($"Steps needed: {fewestNumberOfSteps}");

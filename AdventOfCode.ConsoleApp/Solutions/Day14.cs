@@ -1,11 +1,11 @@
 ﻿using System;
 using AdventOfCode.Day14;
 
-namespace AdventOfCode.ConsoleApp
+namespace AdventOfCode.ConsoleApp.Solutions
 {
-    public class Day14Solution
+    internal class Day14
     {
-        public static void Run()
+        public void Run()
         {
             Console.WriteLine("Day 14");
             Console.WriteLine("Part 2");

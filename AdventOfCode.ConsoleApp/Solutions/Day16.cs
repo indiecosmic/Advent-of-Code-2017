@@ -3,19 +3,16 @@ using System.IO;
 using System.Linq;
 using AdventOfCode.Day16;
 
-namespace AdventOfCode.ConsoleApp
+namespace AdventOfCode.ConsoleApp.Solutions
 {
-    public static class Day16Solution
+    internal class Day16 : SolutionBase
     {
-        public static void Run()
+        public override void Run()
         {
             Console.WriteLine("Day 16");
 
-            string input;
-            using (var reader = new StreamReader("day16input.txt"))
-            {
-                input = reader.ReadToEnd();
-            }
+            var input = GetInput();
+
             var startPositions = "abcdefghijklmnop".ToArray();
             var dance = Dance.Parse(input);
 

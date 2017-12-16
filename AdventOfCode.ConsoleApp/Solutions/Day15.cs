@@ -1,11 +1,11 @@
 ﻿using System;
 using AdventOfCode.Day15;
 
-namespace AdventOfCode.ConsoleApp
+namespace AdventOfCode.ConsoleApp.Solutions
 {
-    public class Day15Solution
+    internal class Day15
     {
-        public static void Run()
+        public void Run()
         {
             Console.WriteLine("Day 15");
             const int aFactor = 16807;
