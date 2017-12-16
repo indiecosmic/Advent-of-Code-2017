@@ -2,11 +2,11 @@
 
 namespace AdventOfCode.ConsoleApp
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Day14Solution.Run();
+            Day16Solution.Run();
             Console.ReadLine();
         }
     }

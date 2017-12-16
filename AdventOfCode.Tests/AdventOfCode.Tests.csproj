@@ -83,6 +83,7 @@
     <Compile Include="Day14\Given_RegionIdentifier\When_IdentifyRegions.cs" />
     <Compile Include="Day15\Given_Generator\When_Generate.cs" />
     <Compile Include="Day15\Given_Judge\When_JudgePairs.cs" />
+    <Compile Include="Day16\Given_Dance\When_Run.cs" />
     <Compile Include="DependencyMocker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />

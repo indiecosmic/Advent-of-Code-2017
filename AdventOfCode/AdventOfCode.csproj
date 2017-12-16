@@ -62,6 +62,8 @@
     <Compile Include="Day14\RegionIdentifier.cs" />
     <Compile Include="Day15\Generator.cs" />
     <Compile Include="Day15\Judge.cs" />
+    <Compile Include="Day16\Dance.cs" />
+    <Compile Include="Day16\Moves.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
