@@ -17,7 +17,7 @@ namespace AdventOfCode.Day05
             _currentPosition = 0;
         }
 
-        public static bool JumpAllowed(int[] state, int position)
+        private static bool JumpAllowed(int[] state, int position)
         {
             var offset = state[position];
             var newPosition = offset + position;

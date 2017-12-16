@@ -6,7 +6,7 @@ namespace AdventOfCode.Tests.Day09.Given_StreamProcessor
     [TestFixture]
     public class When_FindGroups
     {
-        protected StreamProcessor Subject => new StreamProcessor();
+        private StreamProcessor Subject => new StreamProcessor();
 
         [TestCase("{}", 1)]
         [TestCase("{{{}}}", 3)]

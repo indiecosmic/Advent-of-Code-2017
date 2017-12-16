@@ -5,7 +5,7 @@ namespace AdventOfCode.Tests.Day08.Given_JumpInstruction
 {
     public abstract class Arrange
     {
-        protected virtual string Instruction => "b inc 5 if a > 1";
+        private static string Instruction => "b inc 5 if a > 1";
         protected JumpInstruction Result;
 
         [SetUp]

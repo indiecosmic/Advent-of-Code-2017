@@ -25,7 +25,7 @@ namespace AdventOfCode.Tests.Day03
         [Test]
         public void Spiral_should_start_in_center() => Assert.That(_result[(0, 0)], Is.EqualTo(1));
 
-        public static List<TestCaseData> SumAdjacentTestCases => new List<TestCaseData>
+        private static List<TestCaseData> SumAdjacentTestCases => new List<TestCaseData>
         {
             new TestCaseData((-2, 0), 330),
             new TestCaseData((-1, 0), 10),

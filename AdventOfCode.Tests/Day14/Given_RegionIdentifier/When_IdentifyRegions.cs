@@ -31,7 +31,7 @@ namespace AdventOfCode.Tests.Day14.Given_RegionIdentifier
         private int[,] _result;
 
         [SetUp]
-        public void Because_of() => _result = Subject.IdentifyRegions(_testData);
+        public void Because_of() => _result = RegionIdentifier.IdentifyRegions(_testData);
 
         [Test]
         public void Result_should_be_same_size_as_grid() => Assert.That(_result.Length, Is.EqualTo(_testData.Length * _testData.Length));

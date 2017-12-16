@@ -6,7 +6,7 @@ namespace AdventOfCode.Tests.Day09.Given_StreamProcessor
     [TestFixture]
     public class When_CountCharactersInsideGarbage
     {
-        protected StreamProcessor Subject => new StreamProcessor();
+        private StreamProcessor Subject => new StreamProcessor();
 
         [TestCase("<>", 0)]
         [TestCase("<random characters>", 17)]

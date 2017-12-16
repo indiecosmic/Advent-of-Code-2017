@@ -38,7 +38,7 @@ namespace AdventOfCode.Day14
         public int CalculateNumberOfRegions(string input)
         {
             var grid = CreateGrid(input);
-            var regions = _regionIdentifier.IdentifyRegions(grid);
+            var regions = RegionIdentifier.IdentifyRegions(grid);
 
             return regions.Cast<int>().Max();
         }

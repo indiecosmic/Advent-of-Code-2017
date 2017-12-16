@@ -4,7 +4,7 @@ namespace AdventOfCode.ConsoleApp
 {
     static class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             //new Solutions.Day01().Run();
             //new Solutions.Day02().Run();

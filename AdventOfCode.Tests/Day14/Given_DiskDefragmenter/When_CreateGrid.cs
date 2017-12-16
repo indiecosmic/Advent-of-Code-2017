@@ -35,7 +35,7 @@ namespace AdventOfCode.Tests.Day14.Given_DiskDefragmenter
         [Test]
         public void Should_use_8108_squares() => Assert.That(_result.Sum(row => row.Sum(square => square)), Is.EqualTo(8108));
 
-        public class ByteStartsWithConstraint : Constraint
+        private class ByteStartsWithConstraint : Constraint
         {
             private readonly byte[] _expected;
 

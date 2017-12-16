@@ -14,14 +14,14 @@ namespace AdventOfCode.Day07
         public bool HasChildren => ChildrenNames != null && ChildrenNames.Any();
         public IList<Program> Children { get; }
 
-        public Program(string name, int weight)
+        private Program(string name, int weight)
         {
             Name = name;
             Weight = weight;
             Children = new List<Program>();
         }
 
-        public Program(string name, int weight, IEnumerable<string> childrenNames)
+        private Program(string name, int weight, IEnumerable<string> childrenNames)
             : this(name, weight)
         {
             ChildrenNames = childrenNames;

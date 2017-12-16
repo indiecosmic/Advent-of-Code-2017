@@ -2,7 +2,7 @@
 {
     public class RegionIdentifier
     {
-        public int[,] IdentifyRegions(byte[][] grid)
+        public static int[,] IdentifyRegions(byte[][] grid)
         {
             var regions = new int[grid.Length, grid.Length];
             var currentRegion = 1;
@@ -20,7 +20,7 @@
             return regions;
         }
 
-        public static void PlotRegion(int x, int y, byte[][] grid, int[,] regions, int region)
+        private static void PlotRegion(int x, int y, byte[][] grid, int[,] regions, int region)
         {
             if (grid[y][x] == 0 || grid[y][x] == 1 && regions[y, x] != 0)
                 return;

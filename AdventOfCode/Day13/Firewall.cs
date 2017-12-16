@@ -43,9 +43,9 @@ namespace AdventOfCode.Day13
 
         public class Layer
         {
-            public int Depth { get; }
-            public int Range { get; }
-            public int RangeMultiple { get; set; }
+            private int Depth { get; }
+            private int Range { get; }
+            private int RangeMultiple { get; }
 
 
             public int Severity => Depth * Range;

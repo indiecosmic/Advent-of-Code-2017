@@ -12,7 +12,7 @@ namespace AdventOfCode.Day08
         public Conditions Condition { get; }
         public int ConditionValue { get; }
 
-        public JumpInstruction(string targetRegister, string conditionRegister, Operations operation, int operationValue, Conditions condition, int conditionValue)
+        private JumpInstruction(string targetRegister, string conditionRegister, Operations operation, int operationValue, Conditions condition, int conditionValue)
         {
             TargetRegister = targetRegister;
             ConditionRegister = conditionRegister;
@@ -22,7 +22,7 @@ namespace AdventOfCode.Day08
             ConditionValue = conditionValue;
         }
 
-        public bool ShouldApplyTo(int compareTo)
+        private bool ShouldApplyTo(int compareTo)
         {
             switch (Condition)
             {

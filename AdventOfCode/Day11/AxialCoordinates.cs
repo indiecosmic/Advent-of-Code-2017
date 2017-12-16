@@ -75,7 +75,7 @@ namespace AdventOfCode.Day11
             return CalculateFewestNumberOfSteps(stepsTaken.Split(new[] { ',', ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries));
         }
 
-        public int CalculateFewestNumberOfSteps(IEnumerable<string> stepsTaken)
+        private int CalculateFewestNumberOfSteps(IEnumerable<string> stepsTaken)
         {
             var location = new Coordinate(0, 0);
             foreach (var step in stepsTaken)

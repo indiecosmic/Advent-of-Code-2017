@@ -64,7 +64,7 @@ namespace AdventOfCode.Day12
             }
         }
 
-        public class Program
+        private class Program
         {
             public int Id { get; }
             public List<int> ConnectedTo { get; }
