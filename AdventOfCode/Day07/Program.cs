@@ -9,10 +9,24 @@ namespace AdventOfCode.Day07
     {
         public string Name { get; }
         public int Weight { get; }
-        public int TotalWeight => Weight + Children.Sum(c => c.TotalWeight);
-        public IEnumerable<string> ChildrenNames { get; }
-        public bool HasChildren => ChildrenNames != null && ChildrenNames.Any();
+        public IEnumerable<string> ChildrenNames { get; }       
         public IList<Program> Children { get; }
+        public Program Parent { get; set; }
+
+        public int TotalWeight => Weight + Children.Sum(c => c.TotalWeight);
+        public bool HasChildren => ChildrenNames != null && ChildrenNames.Any();
+
+        public bool IsBalanced
+        {
+            get
+            {
+                if (Children.Count == 0)
+                    return true;
+
+                var firstValue = Children.First().TotalWeight;
+                return Children.All(c => c.TotalWeight == firstValue);
+            }
+        }
 
         private Program(string name, int weight)
         {
@@ -27,21 +41,6 @@ namespace AdventOfCode.Day07
             ChildrenNames = childrenNames;
         }
 
-        public int GetWeight()
-        {
-            var childrenWeight = Children.Sum(c => c.GetWeight());
-            return childrenWeight + Weight;
-        }
-
-        public bool IsBalanced()
-        {
-            if (Children.Count == 0)
-                return true;
-            return Children.All(c => c.GetWeight() == Children[0].GetWeight());
-        }
-
-        public Program Parent { get; set; }
-
         public static Program Parse(string input)
         {
             var regex = new Regex(@"^(?<name>\w+)[\s]\((?<weight>\d+)\)(?<children>[\s]->[\s])?(?<names>[\w,\s]+)?$");
@@ -50,7 +49,7 @@ namespace AdventOfCode.Day07
             var weight = Convert.ToInt32(match.Groups["weight"].Value);
             if (!match.Groups["children"].Success)
                 return new Program(name, weight);
-            var names = match.Groups["names"].Value.Split(new[] {' ', ','}, StringSplitOptions.RemoveEmptyEntries);
+            var names = match.Groups["names"].Value.Split(new[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
             return new Program(name, weight, names);
         }
     }

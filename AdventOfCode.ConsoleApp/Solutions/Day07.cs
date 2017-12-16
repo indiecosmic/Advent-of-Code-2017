@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using AdventOfCode.Day07;
 
 namespace AdventOfCode.ConsoleApp.Solutions
 {
@@ -10,36 +10,18 @@ namespace AdventOfCode.ConsoleApp.Solutions
         {
             Console.WriteLine("Day 7");
             var input = GetInput();
+            var tower = Tower.Parse(input);
 
-            var rows = input.Split(new[] {"\r", "\n"}, StringSplitOptions.RemoveEmptyEntries);
-            var programs = new Dictionary<string, AdventOfCode.Day07.Program>();
-            foreach (var row in rows)
-            {
-                var program = AdventOfCode.Day07.Program.Parse(row);
-                programs.Add(program.Name, program);
-            }
-            foreach (var program in programs)
-            {
-                if (program.Value.HasChildren)
-                {
-                    foreach (var child in program.Value.ChildrenNames)
-                    {
-                        programs[child].Parent = program.Value;
-                        program.Value.Children.Add(programs[child]);
-                    }
-                }
-            }
+            Console.WriteLine("Part 1");
+            Console.WriteLine($"Root name: {tower.Root.Name}");
 
-            var root = programs.FirstOrDefault(p => p.Value.Parent == null).Value;
-            Console.WriteLine($"Root name: {root.Name}");
-
-            var unBalancedChild = root.Children.GroupBy(c => c.GetWeight()).FirstOrDefault(c => c.Count() == 1).FirstOrDefault();
-
-
-            foreach (var child in unBalancedChild.Children)
-            {
-                Console.WriteLine($"{child.Name} {child.Weight} {child.GetWeight()}");
-            }
+            Console.WriteLine("Part 2");
+            var unbalanced = tower.FindUnbalancedProgram();
+            var children = unbalanced.Children.GroupBy(c => c.TotalWeight);
+            var oddChild = children.First(c => c.Count() == 1).First();
+            var weightDiff = oddChild.TotalWeight - unbalanced.Children.First(c => c.TotalWeight != oddChild.TotalWeight).TotalWeight;
+            var result = weightDiff > 0 ? oddChild.Weight - weightDiff : oddChild.Weight + weightDiff;
+            Console.WriteLine($"Weight need to be: {result}");
         }
     }
 }

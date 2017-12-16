@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Day03\IMemoryWriter.cs" />
+    <Compile Include="Day07\Tower.cs" />
     <Compile Include="Day09\StreamProcessor.cs" />
     <Compile Include="Day10\KnotHash.cs" />
     <Compile Include="Day10\ListReverser.cs" />
