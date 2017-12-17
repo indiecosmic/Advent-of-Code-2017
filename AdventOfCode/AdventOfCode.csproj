@@ -65,6 +65,8 @@
     <Compile Include="Day15\Judge.cs" />
     <Compile Include="Day16\Dance.cs" />
     <Compile Include="Day16\Moves.cs" />
+    <Compile Include="Day17\CircularBuffer.cs" />
+    <Compile Include="Day17\Spinlock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
