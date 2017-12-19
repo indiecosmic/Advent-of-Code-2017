@@ -63,6 +63,7 @@
     <Compile Include="Solutions\Day02.cs" />
     <Compile Include="Solutions\Day17.cs" />
     <Compile Include="Solutions\Day18.cs" />
+    <Compile Include="Solutions\Day19.cs" />
     <Compile Include="Solutions\SolutionBase.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +110,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="inputs\day18.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="inputs\day19.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
