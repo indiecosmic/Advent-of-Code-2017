@@ -67,7 +67,7 @@ namespace AdventOfCode.Day18
 
         public override int Execute(Duet state)
         {
-            state.LastPlayedSound = state.Registers[RegisterName];
+            state.Messages.Enqueue(state.Registers[RegisterName]);
             return 1;
         }
     }
@@ -165,9 +165,10 @@ namespace AdventOfCode.Day18
 
         public override int Execute(Duet state)
         {
-            if (state.Registers[RegisterName] != 0)
-                state.RecoveredFrequencies.Add(state.LastPlayedSound);
+            if (state.Messages.Count == 0)
+                return 0;
 
+            state.Registers[RegisterName] = state.Messages.Dequeue();
             return 1;
         }
     }

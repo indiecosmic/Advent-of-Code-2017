@@ -9,14 +9,13 @@ namespace AdventOfCode.Day18
 {
     public class Duet
     {
-        public long LastPlayedSound { get; set; }
-        public List<long> RecoveredFrequencies { get; }
+        public Queue<long> Messages { get; }
         public IDictionary<string, long> Registers { get; }
 
         public Duet()
         {
             Registers = new Dictionary<string, long>();
-            RecoveredFrequencies = new List<long>();
+            Messages = new Queue<long>();
         }
 
     }
