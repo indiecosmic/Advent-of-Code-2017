@@ -24,7 +24,8 @@ namespace AdventOfCode.ConsoleApp
             //new Solutions.Day16().Run();
             //new Solutions.Day17().Run();
             //new Solutions.Day18().Run();
-            new Solutions.Day19().Run();
+            //new Solutions.Day19().Run();
+            new Solutions.Day20().Run();
 
             Console.ReadLine();
         }

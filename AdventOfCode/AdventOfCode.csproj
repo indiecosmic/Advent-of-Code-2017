@@ -70,6 +70,7 @@
     <Compile Include="Day18\Duet.cs" />
     <Compile Include="Day18\Instruction.cs" />
     <Compile Include="Day19\Maze.cs" />
+    <Compile Include="Day20\Particle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
