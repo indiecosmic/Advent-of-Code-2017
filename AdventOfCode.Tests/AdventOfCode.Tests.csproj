@@ -103,9 +103,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Day18\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\AdventOfCode\AdventOfCode.csproj">
       <Project>{7e296f79-c201-4e9c-8572-21d5c99a7871}</Project>
