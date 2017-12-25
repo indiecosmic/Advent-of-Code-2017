@@ -86,6 +86,8 @@
     <Compile Include="Day16\Given_Dance\When_Run.cs" />
     <Compile Include="Day17\Given_CircularBuffer\When_StepForward.cs" />
     <Compile Include="Day17\Given_Spinlock\When_Repeat.cs" />
+    <Compile Include="Day20\Given_Particle\When_Parse.cs" />
+    <Compile Include="Day20\Given_Particle\When_Update.cs" />
     <Compile Include="Day22\Given_EvolvedVirus\When_Work.cs" />
     <Compile Include="Day22\Given_EvolvedVirus\When_Work_and_current_node_is_flagged.cs" />
     <Compile Include="Day22\Given_EvolvedVirus\When_Work_and_current_node_is_infected.cs" />

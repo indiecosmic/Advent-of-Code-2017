@@ -9,13 +9,26 @@ namespace AdventOfCode.Day18
 {
     public class Duet
     {
+        public int Id { get; }
         public Queue<long> Messages { get; }
         public IDictionary<string, long> Registers { get; }
+        public bool Waiting { get; set; }
 
-        public Duet()
+        public Duet Partner { get; set; }
+        public int MessagesSent { get; set; }
+
+        public Duet(int id)
         {
+            Id = id;
             Registers = new Dictionary<string, long>();
             Messages = new Queue<long>();
+            Registers["p"] = id;
+        }
+
+        public void Connect(Duet partner)
+        {
+            Partner = partner;
+            partner.Partner = this;
         }
 
     }

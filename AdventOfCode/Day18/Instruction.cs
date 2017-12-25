@@ -29,6 +29,10 @@ namespace AdventOfCode.Day18
         }
 
         public abstract int Execute(Duet state);
+        public override string ToString()
+        {
+            return $"{this.GetType().Name} {RegisterName} {Value}";
+        }
 
         private const string Pattern = @"^(?<instruction>\w+)\s(?<register>\w+)(?:\s(?<value>[-]?\d+|\w+))?$";
         private static readonly Regex Regex = new Regex(Pattern, RegexOptions.Multiline);
@@ -67,7 +71,16 @@ namespace AdventOfCode.Day18
 
         public override int Execute(Duet state)
         {
-            state.Messages.Enqueue(state.Registers[RegisterName]);
+            var value = Regex.IsMatch(RegisterName, "^[a-z]*$")
+                ? state.Registers[RegisterName] :
+                Convert.ToInt64(RegisterName);
+
+            var target = state.Partner ?? state;
+            target.Messages.Enqueue(value);
+            state.MessagesSent++;
+
+            Console.WriteLine($"{state.Id} sent {value} to {target.Id}");
+
             return 1;
         }
     }
@@ -146,11 +159,11 @@ namespace AdventOfCode.Day18
         {
             if (IsNumeric)
             {
-                state.Registers[RegisterName] %= NumericValue;
+                state.Registers[RegisterName] = state.Registers[RegisterName] % NumericValue;
             }
             else
             {
-                state.Registers[RegisterName] %= state.Registers[Value];
+                state.Registers[RegisterName] = state.Registers[RegisterName] % state.Registers[Value];
             }
             return 1;
         }
@@ -165,10 +178,17 @@ namespace AdventOfCode.Day18
 
         public override int Execute(Duet state)
         {
-            if (state.Messages.Count == 0)
+            state.Waiting = state.Messages.Count == 0;
+            if (state.Waiting) { 
+                Console.WriteLine($"{state.Id} is waiting.");
                 return 0;
+            }
 
-            state.Registers[RegisterName] = state.Messages.Dequeue();
+            var receivedValue = state.Messages.Dequeue();
+
+            Console.WriteLine($"{state.Id} received {receivedValue}");
+
+            state.Registers[RegisterName] = receivedValue;
             return 1;
         }
     }
@@ -183,12 +203,17 @@ namespace AdventOfCode.Day18
 
         public override int Execute(Duet state)
         {
-            if (state.Registers[RegisterName] <= 0)
+            if (Regex.IsMatch(RegisterName, "^[a-z]*$"))
             {
-                return 1;
+                if (state.Registers[RegisterName] > 0)
+                    return IsNumeric ? (int)NumericValue : (int)state.Registers[Value];
             }
-
-            return IsNumeric ? (int)NumericValue : (int)state.Registers[Value];
+            else
+            {
+                if (Convert.ToInt32(RegisterName) > 0)
+                    return IsNumeric ? (int)NumericValue : (int)state.Registers[Value];
+            }
+            return 1;
         }
     }
 }
