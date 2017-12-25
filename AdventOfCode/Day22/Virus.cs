@@ -1,92 +1,63 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace AdventOfCode.Day22
+﻿namespace AdventOfCode.Day22
 {
     public class Virus
     {
-        public (int, int) Position { get; private set; }
-        private (int, int) _direction;
-        public int InfectionCount { get; private set; }
+        public (int, int) Position { get; protected set; }
+        protected (int, int) Direction;
+        public int InfectionCount { get; protected set; }
 
         public Virus((int, int) position, (int, int) direction)
         {
             Position = position;
-            _direction = direction;
+            Direction = direction;
         }
 
-        public Map Work(Map map)
+        public virtual Map Work(Map map)
         {
             var state = new Map(map);
 
-            if (state.IsInfected(Position))
+            if (state.GetState(Position) == Map.NodeState.Infected)
             {
-                _direction = TurnRight(_direction);
+                Direction = TurnRight(Direction);
                 state.Clean(Position);
             }
             else
             {
-                _direction = TurnLeft(_direction);
+                Direction = TurnLeft(Direction);
                 state.Infect(Position);
                 InfectionCount++;
             }
 
-            Position = (Position.Item1 + _direction.Item1, Position.Item2 + _direction.Item2);
+            Position = MoveForward(Position, Direction);
             return state;
         }
-        
 
-        public IDictionary<(int,int), char> Work(IDictionary<(int,int), char> map)
+        protected static (int, int) MoveForward((int, int) position, (int, int) direction)
         {
-            var state = map.ToDictionary(entry => entry.Key, entry => entry.Value);
-            if (!state.ContainsKey(Position))
-                state.Add(Position, '.');
+            return (position.Item1 + direction.Item1, position.Item2 + direction.Item2);
+        }
 
-            if (state[Position] == '#')
-            {
-                _direction = TurnRight(_direction);
-                state[Position] = '.';
-            }
-            else
-            {
-                _direction = TurnLeft(_direction);
-                state[Position] = '#';
-                InfectionCount++;
-            }
-
-            Position = (Position.Item1 + _direction.Item1, Position.Item2 + _direction.Item2);
-            return state;
+        protected static (int, int) Reverse((int, int) direction)
+        {
+            return (-direction.Item1, -direction.Item2);
         }
 
         public static (int, int) TurnRight((int, int) direction)
         {
-            if (Math.Abs(direction.Item1) > 0)
-            {
-                direction.Item2 = -direction.Item1;
-                direction.Item1 = 0;
-            }
-            else if (Math.Abs(direction.Item2) > 0)
-            {
-                direction.Item1 = direction.Item2;
-                direction.Item2 = 0;
-            }
-            return direction;
+            if (direction.Equals(Day22.Direction.Up))
+                return Day22.Direction.Right;
+            if (direction.Equals(Day22.Direction.Right))
+                return Day22.Direction.Down;
+            return direction.Equals(Day22.Direction.Down) ? Day22.Direction.Left : Day22.Direction.Up;
         }
 
         public static (int, int) TurnLeft((int, int) direction)
         {
-            if (Math.Abs(direction.Item1) > 0)
-            {
-                direction.Item2 = direction.Item1;
-                direction.Item1 = 0;
-            }
-            else if (Math.Abs(direction.Item2) > 0)
-            {
-                direction.Item1 = -direction.Item2;
-                direction.Item2 = 0;
-            }
-            return direction;
+            if (direction.Equals(Day22.Direction.Up))
+                return Day22.Direction.Left;
+            if (direction.Equals(Day22.Direction.Left))
+                return Day22.Direction.Down;
+            return direction.Equals(Day22.Direction.Down) ? Day22.Direction.Right : Day22.Direction.Up;
         }
 
     }

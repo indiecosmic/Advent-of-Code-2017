@@ -9,6 +9,8 @@ namespace AdventOfCode.Day22
     {
         private readonly Dictionary<(int, int), char> _map;
 
+        public int Count => _map.Count;
+
         public Map(Map map)
         {
             _map = map._map.ToDictionary(entry => entry.Key, entry => entry.Value);
@@ -19,22 +21,23 @@ namespace AdventOfCode.Day22
             _map = map;
         }
 
-        public int Count => _map.Count;
-
-        public bool IsInfected((int, int) position)
+        public NodeState GetState((int, int) position)
         {
-            return _map.ContainsKey(position) && _map[position] == '#';
-        }
+            if (!_map.ContainsKey(position))
+                return NodeState.Clean;
 
-        public bool IsInfected(int x, int y)
-        {
-            return IsInfected((x, y));
-        }
-
-        public void Infect(int x, int y)
-        {
-            var pos = (x, y);
-            Infect(pos);
+            var state = _map[position];
+            switch (state)
+            {
+                case '#':
+                    return NodeState.Infected;
+                case 'W':
+                    return NodeState.Weakened;
+                case 'F':
+                    return NodeState.Flagged;
+                default:
+                    return NodeState.Clean;
+            }
         }
 
         public void Infect((int, int) pos)
@@ -42,15 +45,19 @@ namespace AdventOfCode.Day22
             _map[pos] = '#';
         }
 
-        public void Clean(int x, int y)
-        {
-            var pos = (x, y);
-            Clean(pos);
-        }
-
-        internal void Clean((int, int) position)
+        public void Clean((int, int) position)
         {
             _map[position] = '.';
+        }
+
+        public void Weaken((int, int) position)
+        {
+            _map[position] = 'W';
+        }
+
+        public void Flag((int, int) position)
+        {
+            _map[position] = 'F';
         }
 
         public static Map Parse(string input)
@@ -83,12 +90,37 @@ namespace AdventOfCode.Day22
                 for (var col = minX; col <= maxX; col++)
                 {
                     var pos = (col, row);
-                    var isInfected = IsInfected(pos);
-                    str.Append(isInfected ? "# " : ". ");
+                    var state = GetState(pos);
+                    switch (state)
+                    {
+                        case NodeState.Clean:
+                            str.Append(". ");
+                            break;
+                        case NodeState.Weakened:
+                            str.Append("W ");
+                            break;
+                        case NodeState.Infected:
+                            str.Append("# ");
+                            break;
+                        case NodeState.Flagged:
+                            str.Append("F ");
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
                 }
                 str.AppendLine();
             }
             return str.ToString();
         }
+
+        public enum NodeState
+        {
+            Clean,
+            Weakened,
+            Infected,
+            Flagged
+        }
+
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using AdventOfCode.Day22;
 
 namespace AdventOfCode.ConsoleApp.Solutions
@@ -14,15 +13,23 @@ namespace AdventOfCode.ConsoleApp.Solutions
             Console.WriteLine("Part 1");
             var map = Map.Parse(input);
             var position = (0, 0);
-            var direction = (0, 1);
+            var direction = Direction.Up;
             var virus = new Virus(position, direction);
             for (var i = 0; i < 10000; i++)
-            {
                 map = virus.Work(map);
-            }
             Console.WriteLine($"Result: {virus.InfectionCount}");
 
-
+            Console.WriteLine("Part 2");
+            map = Map.Parse(input);
+            position = (0, 0);
+            direction = Direction.Up;
+            virus = new EvolvedVirus(position, direction);
+            for (var i = 0; i < 10000000; i++)
+            {
+                virus.Work(map);
+            }
+                
+            Console.WriteLine($"Result: {virus.InfectionCount}");
         }
         
     }
