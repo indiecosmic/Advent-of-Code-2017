@@ -69,6 +69,8 @@
     <Compile Include="Day17\Spinlock.cs" />
     <Compile Include="Day18\Duet.cs" />
     <Compile Include="Day18\Instruction.cs" />
+    <Compile Include="Day22\Map.cs" />
+    <Compile Include="Day22\Virus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

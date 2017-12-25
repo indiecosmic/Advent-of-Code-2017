@@ -86,6 +86,10 @@
     <Compile Include="Day16\Given_Dance\When_Run.cs" />
     <Compile Include="Day17\Given_CircularBuffer\When_StepForward.cs" />
     <Compile Include="Day17\Given_Spinlock\When_Repeat.cs" />
+    <Compile Include="Day22\Given_Map\When_Parse.cs" />
+    <Compile Include="Day22\Given_Virus\When_Turn.cs" />
+    <Compile Include="Day22\Given_Virus\When_Work_and_current_node_is_infected.cs" />
+    <Compile Include="Day22\Given_Virus\When_Work.cs" />
     <Compile Include="DependencyMocker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
