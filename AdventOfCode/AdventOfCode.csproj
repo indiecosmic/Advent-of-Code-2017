@@ -77,6 +77,7 @@
     <Compile Include="Day22\Virus.cs" />
     <Compile Include="Day23\Instructions.cs" />
     <Compile Include="Day23\Register.cs" />
+    <Compile Include="Day24\Component.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
