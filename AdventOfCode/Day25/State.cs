@@ -9,12 +9,20 @@ namespace AdventOfCode.Day25
 
         public List<Branch> Branches { get; } = new List<Branch>();
 
-        public Branch PositiveBranch { get; set; }
-        public Branch NegativeBranch { get; set; }
-
-
-        private readonly int _writeValue;
-        private readonly Direction _direction;
+        public string Run(Tape tape)
+        {
+            var branch = Branches.First(b => b.Condition == tape.CurrentValue);
+            tape.CurrentValue = branch.WriteValue;
+            if (branch.MoveDirection == Direction.Left)
+            {
+                tape.MoveLeft();
+            }
+            else
+            {
+                tape.MoveRight();
+            }
+            return branch.NextState;
+        }
 
         public enum Direction
         {
@@ -33,40 +41,6 @@ namespace AdventOfCode.Day25
             {
                 Condition = condition;
             }
-        }
-
-        public State()
-        {
-            
-        }
-
-        public State(int writeValue, Direction direction)
-        {
-            _writeValue = writeValue;
-            _direction = direction;
-        }
-
-        public State NextStateIfOne { get; set; }
-        public State NextStateIfZero { get; set; }
-
-        public static State Parse(string input)
-        {
-            return null;
-        }
-
-        public string Run(Tape tape)
-        {
-            var branch = Branches.First(b => b.Condition == tape.CurrentValue);
-            tape.CurrentValue = branch.WriteValue;
-            if (branch.MoveDirection == Direction.Left)
-            {
-                tape.MoveLeft();
-            }
-            else
-            {
-                tape.MoveRight();
-            }
-            return branch.NextState;
         }
     }
 }
