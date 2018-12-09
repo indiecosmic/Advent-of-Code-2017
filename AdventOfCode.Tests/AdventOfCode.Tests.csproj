@@ -90,6 +90,10 @@
     <Compile Include="Day20\Given_Particle\When_Update.cs" />
     <Compile Include="Day21\Given_Grid\When_Divide_with_3.cs" />
     <Compile Include="Day21\Given_Grid\When_Divide_with_2.cs" />
+    <Compile Include="Day21\Given_Grid\When_Join.cs" />
+    <Compile Include="Day21\Given_Rule\When_Enhance.cs" />
+    <Compile Include="Day21\Given_Rule\When_Matches.cs" />
+    <Compile Include="Day21\Given_Rule\When_Parse.cs" />
     <Compile Include="Day22\Given_EvolvedVirus\When_Work.cs" />
     <Compile Include="Day22\Given_EvolvedVirus\When_Work_and_current_node_is_flagged.cs" />
     <Compile Include="Day22\Given_EvolvedVirus\When_Work_and_current_node_is_infected.cs" />

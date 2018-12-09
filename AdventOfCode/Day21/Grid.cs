@@ -6,16 +6,16 @@ namespace AdventOfCode.Day21
 {
     public class Grid
     {
-        private readonly char[,] _pixels;
+        public char[,] Pixels { get; }
 
         public Grid(char[,] pixels)
         {
-            _pixels = pixels;
+            Pixels = pixels;
         }
 
         public bool DivisibleBy(int divider)
         {
-            return _pixels.GetLength(0) % divider == 0;
+            return Pixels.GetLength(0) % divider == 0;
         }
 
         public Grid[] Divide(int divider)
@@ -23,7 +23,7 @@ namespace AdventOfCode.Day21
             if (!DivisibleBy(divider))
                 throw new ArgumentException($"Grid cannot be divided by {divider}", nameof(divider));
 
-            var pieceCount = _pixels.GetLength(0) / divider;
+            var pieceCount = Pixels.GetLength(0) / divider;
             var pieceSize = divider;
             var pieces = new List<Grid>();
 
@@ -39,7 +39,7 @@ namespace AdventOfCode.Day21
                         {
                             var sourceRow = rowOffset * pieceSize + row;
                             var sourceCol = colOffset * pieceSize + col;
-                            pixels[row, col] = _pixels[sourceRow, sourceCol];
+                            pixels[row, col] = Pixels[sourceRow, sourceCol];
                         }
                     }
 
@@ -50,19 +50,52 @@ namespace AdventOfCode.Day21
             return pieces.ToArray();
         }
 
+        public bool Equals(Grid other)
+        {
+            if (Pixels.Length != other.Pixels.Length) return false;
+            if (Pixels.Rank != other.Pixels.Rank) return false;
+
+            var size = Pixels.GetLength(0);
+            for (var row = 0; row < size; row++)
+            {
+                for (var col = 0; col < size; col++)
+                {
+                    if (Pixels[row, col] != other.Pixels[row, col]) return false;
+                }
+            }
+            return true;
+        }
+
         public override string ToString()
         {
             var str = new StringBuilder();
-            for (var row = 0; row < _pixels.GetLength(0); row++)
+            for (var row = 0; row < Pixels.GetLength(0); row++)
             {
-                for (var col = 0; col < _pixels.GetLength(1); col++)
+                for (var col = 0; col < Pixels.GetLength(1); col++)
                 {
-                    str.Append(_pixels[row, col]);
+                    str.Append(Pixels[row, col]);
                 }
-                if (row < _pixels.GetLength(0) - 1)
+                if (row < Pixels.GetLength(0) - 1)
                     str.Append('/');
             }
             return str.ToString();
+        }
+
+        public static Grid Join(Grid[] parts)
+        {
+            var partSize = parts[0].Pixels.GetLength(0);
+            var size = parts.Length * partSize;
+            
+            var result = new char[size, size];
+            for (var x = 0; x < size; x++)
+            {
+                for (var y = 0; y < size; y++)
+                {
+                    var part = (x / partSize) * (size / partSize) + y / partSize;
+                    result[x, y] = parts[part].Pixels[x % partSize, y % partSize];
+                }
+            }
+            return new Grid(result);
         }
     }
 }

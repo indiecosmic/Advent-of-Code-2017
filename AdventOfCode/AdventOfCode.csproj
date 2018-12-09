@@ -71,7 +71,9 @@
     <Compile Include="Day18\Instruction.cs" />
     <Compile Include="Day19\Maze.cs" />
     <Compile Include="Day20\Particle.cs" />
+    <Compile Include="Day21\EnhancementRule.cs" />
     <Compile Include="Day21\Grid.cs" />
+    <Compile Include="Day21\StringExtensions.cs" />
     <Compile Include="Day22\Direction.cs" />
     <Compile Include="Day22\EvolvedVirus.cs" />
     <Compile Include="Day22\Map.cs" />
