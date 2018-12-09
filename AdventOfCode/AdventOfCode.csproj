@@ -79,6 +79,8 @@
     <Compile Include="Day23\Instructions.cs" />
     <Compile Include="Day23\Register.cs" />
     <Compile Include="Day24\Component.cs" />
+    <Compile Include="Day25\State.cs" />
+    <Compile Include="Day25\Tape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

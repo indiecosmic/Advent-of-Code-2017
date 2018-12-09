@@ -69,6 +69,7 @@
     <Compile Include="Solutions\Day22.cs" />
     <Compile Include="Solutions\Day23.cs" />
     <Compile Include="Solutions\Day24.cs" />
+    <Compile Include="Solutions\Day25.cs" />
     <Compile Include="Solutions\SolutionBase.cs" />
   </ItemGroup>
   <ItemGroup>
